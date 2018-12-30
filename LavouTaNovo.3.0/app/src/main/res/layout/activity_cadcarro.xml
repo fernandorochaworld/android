@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.com.inteligenti.lavoutanovov2.CadastrarseActivity"
+    android:background="@color/graylight">
+
+    <android.support.v7.widget.CardView
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:textSize="25dp"
+                android:layout_marginBottom="5dp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:text="Cadastrar Carro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/ivCarro"
+                android:src="@drawable/no_image"
+                android:layout_gravity="center"
+                android:layout_width="180dp"
+                android:layout_height="130dp" />
+
+            <Button
+                android:id="@+id/btnProfileImage"
+                android:text="Foto"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.vicmikhailau.maskededittext.MaskedEditText
+                android:id="@+id/etPlaca"
+                android:inputType="textCapCharacters"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:hint="Placa *"
+                app:mask="UUU-####"
+                android:paddingLeft="13dp" />
+
+            <EditText
+                android:id="@+id/etMarca"
+                android:inputType="text"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:hint="Marca *"
+                android:paddingLeft="13dp" />
+
+            <EditText
+                android:id="@+id/etModelo"
+                android:inputType="text"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:hint="Modelo *"
+                android:paddingLeft="13dp" />
+
+            <Spinner
+                android:id="@+id/spTamanho"
+                android:inputType="text"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:entries="@array/lista_tamanho_carro"
+                android:prompt="@string/titulo_tamanho_carro"
+                android:hint="Tamanho do carro"
+                android:paddingLeft="13dp" />
+
+            <Spinner
+                android:id="@+id/spCor"
+                android:inputType="text"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:entries="@array/lista_cor"
+                android:prompt="@string/titulo_cor"
+                android:hint="Cor"
+                android:paddingLeft="13dp" />
+
+            <EditText
+                android:id="@+id/etOutraCor"
+                android:inputType="text"
+                android:visibility="gone"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:hint="Outra cor *"
+                android:paddingLeft="13dp" />
+
+            <Button
+                android:id="@+id/btnCadastrar"
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginVertical="10dp"
+                android:textColor="#fff"
+                android:background="@drawable/buttonstyleithgradient"
+                android:text="Cadastrar"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</ScrollView>

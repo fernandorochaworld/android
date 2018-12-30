@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.inteligenti.lavoutanovov2.InicialActivity">
+
+    <LinearLayout
+        android:padding="7dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:src="@drawable/nova_logo"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            />
+
+
+        <com.facebook.login.widget.LoginButton
+            xmlns:fb="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/login_button"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:visibility="invisible"
+            android:background="@drawable/btn_facebook"
+            android:text="Entrar com o Facebook"
+            />
+
+        <Button
+            android:id="@+id/btnFacebook"
+            android:layout_margin="7dp"
+            android:layout_height="40dp"
+            android:textColor="#fff"
+            android:background="@drawable/btn_facebook"
+            android:text="Entrar com o Facebook"
+            android:layout_width="match_parent"
+            />
+        <Button
+            android:id="@+id/btnCadastrarse"
+            android:layout_margin="7dp"
+            android:textColor="#fff"
+            android:background="@drawable/buttonstyleithgradient"
+            android:text="Cadastre-se"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            />
+        <Button
+            android:id="@+id/btnLoginCliente"
+            android:layout_margin="7dp"
+            android:textColor="#fff"
+            android:background="@drawable/buttonstyleithgradient"
+            android:text="Login Cliente"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            />
+        <Button
+            android:id="@+id/btnLoginProfissional"
+            android:layout_margin="7dp"
+            android:textColor="#fff"
+            android:background="@drawable/buttonstyleithgradient"
+            android:text="Login Profissional"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

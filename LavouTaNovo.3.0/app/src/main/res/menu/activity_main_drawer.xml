@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_editar_perfil"
+            android:icon="@drawable/ic_person"
+            android:title="Editar perfil" />
+        <item
+            android:id="@+id/nav_add_carro"
+            android:icon="@drawable/ic_car_black_24dp"
+            android:title="Meus Carros" />
+        <item
+            android:id="@+id/nav_list_servico"
+            android:icon="@drawable/ic_local_car_wash_white_24dp"
+            android:title="Meus Serviços" />
+    </group>
+
+    <item android:title="Mais informações">
+        <menu>
+            <!--item
+                android:id="@+id/nav_pagar"
+                android:icon="@drawable/ic_info_black_24dp"
+                android:title="Pagar" /-->
+
+            <item
+                android:id="@+id/nav_sobre_app"
+                android:icon="@drawable/ic_info_black_24dp"
+                android:title="Sobre o App" />
+            <item
+                android:id="@+id/nav_exit"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Sair" />
+        </menu>
+    </item>
+
+</menu>

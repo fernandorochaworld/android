@@ -1,0 +1,213 @@
+<resources>
+    <string name="app_name">Lavou Tá Novo</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="menu_exit">Sair</string>
+
+
+    <string name="facebook_app_id">527133867645558</string>
+    <string name="fb_login_protocol_scheme">fb527133867645558</string>
+
+    <string name="titulo_carro">Selecione o carro</string>
+
+    <string name="titulo_cor">Selecione a Cor</string>
+    <string-array name="lista_cor">
+        <item>Branco</item>
+        <item>Preto</item>
+        <item>Prata</item>
+        <item>Vermelho</item>
+        <item>Azul</item>
+        <item>Verde</item>
+        <item>Amarelo</item>
+        <item>Outra Cor *</item>
+    </string-array>
+
+    <string name="titulo_tamanho_carro">Selecione uma opção</string>
+    <string-array name="lista_tamanho_carro">
+        <item>Pequeno (Rete)</item>
+        <item>Médio (Sedam e picapes pequenas)</item>
+        <item>Grande (Caminhonetes ou com cap. de 7 a 9 passageiro).</item>
+    </string-array>
+
+    <string name="titulo_estado">Selecione um estado</string>
+    <string-array name="lista_estado">
+        <item>AC</item>
+        <item>AL</item>
+        <item>AP</item>
+        <item>AM</item>
+        <item>BA</item>
+        <item>CE</item>
+        <item>DF</item>
+        <item>ES</item>
+        <item>GO</item>
+        <item>MA</item>
+        <item>MT</item>
+        <item>MS</item>
+        <item>MG</item>
+        <item>PA</item>
+        <item>PB</item>
+        <item>PR</item>
+        <item>PE</item>
+        <item>PI</item>
+        <item>RJ</item>
+        <item>RN</item>
+        <item>RS</item>
+        <item>RO</item>
+        <item>RR</item>
+        <item>SC</item>
+        <item>SP</item>
+        <item>SE</item>
+        <item>TO</item>
+    </string-array>
+
+    <string-array name="lista_estado_nome">
+        <item>Acre</item>
+        <item>Alagoas</item>
+        <item>Amapá</item>
+        <item>Amazonas</item>
+        <item>Bahia</item>
+        <item>Ceará</item>
+        <item>Distrito Federal</item>
+        <item>Espírito Santo</item>
+        <item>Goiás</item>
+        <item>Maranhão</item>
+        <item>Mato Grosso</item>
+        <item>Mato Grosso do Sul</item>
+        <item>Minas Gerais</item>
+        <item>Pará</item>
+        <item>Paraíba</item>
+        <item>Paraná</item>
+        <item>Pernambuco</item>
+        <item>Piauí</item>
+        <item>Rio de Janeiro</item>
+        <item>Rio Grande do Norte</item>
+        <item>Rio Grande do Sul</item>
+        <item>Rondônia</item>
+        <item>Roraima</item>
+        <item>Santa Catarina</item>
+        <item>São Paulo</item>
+        <item>Sergipe</item>
+        <item>Tocantins</item>
+    </string-array>
+
+    <string name="titulo_servico">Selecione um servico</string>
+    <string-array name="lista_servico">
+        <item>Master</item>
+        <item>External</item>
+        <item>Ouro</item>
+        <item>Diamante</item>
+        <item>Imperial</item>
+        <item>Titan</item>
+    </string-array>
+
+    <string name="desc_titan">
+        Plano Titan\n
+        1- Limpeza externa.\n
+        2- Limpeza das rodas e caixa de rodas.\n
+        3- Limpeza dos vidros.\n
+        4- Embelezamento de pneus.\n
+        5- Limpeza do painel.\n
+        6- Aspiração.\n
+        7- Aromatizante de interior.\n
+        8- Higienização de ar-condicionado.\n
+        9- Higienização e hidratação de bancos de couro ou Higienização e de bancos de tecidos.\n
+        10- Higienização de teto e portas de couro ou tecidos.\n
+        11- tratamento de plástico externo.\n
+        \n
+        Valores por veículo\n
+        Pequeno R$: 170,00\n
+        Médio R$: 170,00\n
+        Grande R$: 190,00\n
+        \n
+        Duração 2 hora e 30 minutos
+    </string>
+
+    <string name="desc_imperial">
+        Plano Imperial\n
+        1- Limpeza externa.\n
+        2- Limpeza das rodas e caixa de rodas.\n
+        3- Limpeza dos vidros.\n
+        4- Embelezamento de pneus.\n
+        5- Limpeza do painel.\n
+        6- Aspiração.\n
+        7- Aromatizante de interior.\n
+        8- Higienização de ar-condicionado.\n
+        9- Higienização e hidratação de bancos de couro ou Higienização e de bancos de tecidos.\n
+        10- Higienização de teto e portas de couro ou tecidos.\n
+        \n
+        Valores por veículo\n
+        Pequeno R$: 140,00\n
+        Médio R$: 140,00\n
+        Grande R$: 160,00\n
+        \n
+        Duração 2 hora e 30 minutos
+    </string>
+
+    <string name="desc_diamante">
+        Plano Diamante\n
+        1- Limpeza externa.\n
+        2- Limpeza das rodas e caixa de rodas.\n
+        3-Limpeza dos vidros.\n
+        4- Embelezamento de pneus.\n
+        5- Limpeza do painel.\n
+        6- Aspiração.\n
+        7- Aromatizante de interior.\n
+        8- Higienização de ar-condicionado.\n
+        \n
+        Valores por veículo\n
+        Pequeno R$: 55,00\n
+        Médio R$: 55,00\n
+        Grande R$: 65,00\n
+        \n
+        Duração 1 hora e 30 minutos
+    </string>
+
+    <string name="desc_ouro">
+        Plano Ouro\n
+        1- Limpeza externa.\n
+        2- Limpeza das rodas e caixa de rodas.\n
+        3- limpeza dos vidros.\n
+        4- Embelezamento de pneus.\n
+        5- Limpeza do painel.\n
+        6- Aspiração.\n
+        7- Aromatizante de interior.\n
+        \n
+        Valores por veículo\n
+        Pequeno R$: 45,00\n
+        Médio R$: 45,00\n
+        Grande R$: 55,00\n
+        \n
+        Duração 1 hora e 30 minutos
+    </string>
+    <string name="desc_external">
+        Plano External\n
+        1- Aspiração.\n
+        2- Limpeza do painel.\n
+        3- Aromatizante de interior.\n
+        4- Limpeza dos vidros interno.\n
+        \n
+        Valores por veículo\n
+        Pequeno R$: 30,00\n
+        Médio R$: 30,00\n
+        Grande R$: 35,00\n
+        \n
+        Duração 30 minutos
+    </string>
+    <string name="desc_master">
+        Plano Master\n
+        1- Limpeza externa.\n
+        2- Limpeza das rodas e caixa de rodas.\n
+        3-Limpeza dos vidros externo.\n
+        4- Embelezamento de pneus.\n
+        \n
+        Valores por veículo\n
+        Pequeno R$: 30,00\n
+        Médio R$: 30,00\n
+        Grande R$: 40,00\n
+        \n
+        Duração 40 minutos
+    </string>
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.inteligenti.lavoutanovov2.PayActivity">
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pagar"/>
+
+    <WebView
+        android:id="@+id/web_view"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"></WebView>
+
+    <com.cooltechworks.creditcarddesign.CreditCardView
+        android:id="@+id/card_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:card_number="38056789000000000"
+        app:card_holder_name="JOAO DA SILVA"
+        app:cvv="522"
+        app:card_expiration="01/17"
+        />
+
+</LinearLayout>

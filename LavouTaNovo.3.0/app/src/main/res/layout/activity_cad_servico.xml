@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.com.inteligenti.lavoutanovov2.CadServicoActivity"
+    android:background="@color/graylight">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.CardView
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="5dp"
+            app:cardCornerRadius="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_titulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:text="Solicitar Serviço"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/etData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_field"
+                        android:clickable="false"
+                        android:enabled="false"
+                        android:focusable="false"
+                        android:hint="Data *"
+                        android:inputType="date"
+                        android:onClick="updateData"
+                        android:paddingLeft="13dp" />
+
+                    <EditText
+                        android:id="@+id/etHora"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_field"
+                        android:enabled="false"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:hint="Hora *"
+                        android:inputType="time"
+                        android:onClick="updateHora"
+                        android:paddingLeft="13dp" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/etEndereco"
+                    android:inputType="textMultiLine"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_field"
+                    android:hint="Endereço *"
+                    android:paddingLeft="13dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Spinner
+                        android:id="@+id/spServico"
+                        android:inputType="text"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_field"
+                        android:entries="@array/lista_servico"
+                        android:prompt="@string/titulo_servico"
+                        android:hint="Tipo Serviço *"
+                        android:paddingLeft="13dp" />
+                    <EditText
+                        android:id="@+id/etValor"
+                        android:inputType="numberDecimal"
+                        android:enabled="false"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_field"
+                        android:hint="Valor *"
+                        android:paddingLeft="13dp" />
+                </LinearLayout>
+
+
+                <Spinner
+                    android:id="@+id/spCarro"
+                    android:inputType="text"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_field"
+                    android:prompt="@string/titulo_carro"
+                    android:hint="Carro *"
+                    android:paddingLeft="13dp" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_cliente"
+            android:visibility="gone"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="5dp"
+            app:cardCornerRadius="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Cliente"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivClienteProfileImage"
+                    android:src="@drawable/default_avatar"
+                    android:layout_gravity="center"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp" />
+
+                <EditText
+                    android:id="@+id/etClienteNome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_field"
+                    android:defaultFocusHighlightEnabled="false"
+                    android:enabled="false"
+                    android:hint="Nome Completo *"
+                    android:inputType="textCapSentences"
+                    android:paddingLeft="13dp"
+                    tools:enabled="false" />
+
+                <com.vicmikhailau.maskededittext.MaskedEditText
+                    android:visibility="gone"
+                    android:enabled="false"
+                    android:id="@+id/etClienteTelefone"
+                    android:inputType="number"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_field"
+                    android:hint="Telefone *"
+                    app:mask="(##)#####-####"
+                    android:paddingLeft="13dp" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_profissional"
+            android:visibility="gone"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="5dp"
+            app:cardCornerRadius="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Profissional"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivProfissionalProfileImage"
+                    android:src="@drawable/default_avatar"
+                    android:layout_gravity="center"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp" />
+
+                <EditText
+                    android:id="@+id/etProfissionalNome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_field"
+                    android:defaultFocusHighlightEnabled="false"
+                    android:enabled="false"
+                    android:hint="Nome Completo *"
+                    android:inputType="textCapSentences"
+                    android:paddingLeft="13dp"
+                    tools:enabled="false" />
+
+
+                <TextView
+                    android:textSize="25dp"
+                    android:layout_margin="10dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:text="Veículo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etProfissionalTipoVeiculo"
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_field"
+                    android:hint="Tipo do Veículo"
+                    android:paddingLeft="13dp" />
+
+                <com.vicmikhailau.maskededittext.MaskedEditText
+                    android:id="@+id/etProfissionalCarroPlaca"
+                    android:enabled="false"
+                    android:inputType="textCapCharacters"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_field"
+                    android:hint="Placa *"
+                    app:mask="UUU-####"
+                    android:paddingLeft="13dp" />
+
+                <EditText
+                    android:id="@+id/etProfissionalCarroMarca"
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_field"
+                    android:hint="Marca *"
+                    android:paddingLeft="13dp" />
+
+                <EditText
+                    android:id="@+id/etProfissionalCarroModelo"
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_field"
+                    android:hint="Modelo *"
+                    android:paddingLeft="13dp" />
+
+                <EditText
+                    android:id="@+id/etProfissionalCarroCor"
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_field"
+                    android:hint="Cor *"
+                    android:paddingLeft="13dp" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_carro"
+            android:visibility="gone"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="5dp"
+            app:cardCornerRadius="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:textSize="25dp"
+                    android:layout_margin="10dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:text="Carro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/ivCarro"
+                    android:src="@drawable/no_image"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_width="180dp"
+                    android:layout_height="130dp" />
+
+                <com.vicmikhailau.maskededittext.MaskedEditText
+                    android:id="@+id/etCarroPlaca"
+                    android:enabled="false"
+                    android:inputType="textCapCharacters"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_field"
+                    android:hint="Placa *"
+                    app:mask="UUU-####"
+                    android:paddingLeft="13dp" />
+
+                <EditText
+                    android:id="@+id/etCarroMarca"
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_field"
+                    android:hint="Marca *"
+                    android:paddingLeft="13dp" />
+
+                <EditText
+                    android:id="@+id/etCarroModelo"
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_field"
+                    android:hint="Modelo *"
+                    android:paddingLeft="13dp" />
+
+                <Spinner
+                    android:id="@+id/spCarroTamanho"
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_field"
+                    android:entries="@array/lista_tamanho_carro"
+                    android:prompt="@string/titulo_tamanho_carro"
+                    android:hint="Tamanho do carro"
+                    android:paddingLeft="13dp" />
+
+                <Spinner
+                    android:id="@+id/spCarroCor"
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_field"
+                    android:entries="@array/lista_cor"
+                    android:prompt="@string/titulo_cor"
+                    android:hint="Cor"
+                    android:paddingLeft="13dp" />
+
+                <EditText
+                    android:id="@+id/etCarroOutraCor"
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_field"
+                    android:hint="Outra cor *"
+                    android:paddingLeft="13dp" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="5dp"
+            app:cardCornerRadius="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:text="Endereço para o serviço"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Spinner
+                        android:id="@+id/spEstado"
+                        android:inputType="text"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1.4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_field"
+                        android:entries="@array/lista_estado"
+                        android:prompt="@string/titulo_estado"
+                        android:hint="Estado *"
+                        android:paddingLeft="13dp" />
+
+                    <EditText
+                        android:id="@+id/etCidade"
+                        android:layout_weight="0.6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/bg_field"
+                        android:hint="Cidade *"
+                        android:inputType="textCapSentences"
+                        android:paddingLeft="13dp" />
+                </LinearLayout>
+
+
+                <EditText
+                    android:id="@+id/etBairro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_field"
+                    android:hint="Bairro *"
+                    android:inputType="textCapSentences"
+                    android:paddingLeft="13dp" />
+
+
+                <EditText
+                    android:id="@+id/etRua"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_field"
+                    android:hint="Rua/Avenida *"
+                    android:inputType="textCapSentences"
+                    android:paddingLeft="13dp" />
+
+                <com.vicmikhailau.maskededittext.MaskedEditText
+                    android:id="@+id/etCep"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_field"
+                    android:hint="CEP *"
+                    app:mask="##.###-###"
+                    android:inputType="number"
+                    android:paddingLeft="13dp" />
+
+                <EditText
+                    android:id="@+id/etNumero"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_field"
+                    android:hint="Número *"
+                    android:inputType="text"
+                    android:paddingLeft="13dp" />
+
+                <EditText
+                    android:id="@+id/etEdificio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_field"
+                    android:hint="Edifício"
+                    android:inputType="textCapSentences"
+                    android:paddingLeft="13dp" />
+
+                <EditText
+                    android:id="@+id/etAp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_field"
+                    android:hint="Apartamento"
+                    android:inputType="text"
+                    android:paddingLeft="13dp" />
+
+                <EditText
+                    android:id="@+id/etComplemento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_field"
+                    android:hint="Complemento"
+                    android:inputType="textCapSentences"
+                    android:paddingLeft="13dp" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_servico_cad"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="5dp"
+            app:cardCornerRadius="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnSolicitar"
+                    android:onClick="salvar"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginVertical="10dp"
+                    android:background="@drawable/buttonstyleithgradient"
+                    android:text="Solicitar"
+                    android:textColor="#fff" />
+
+                <WebView
+                    android:id="@+id/web_view"
+                    android:layout_width="0.1dp"
+                    android:layout_height="0.1dp"></WebView>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:visibility="gone"
+            android:id="@+id/card_servico_avaliar"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="5dp"
+            app:cardCornerRadius="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:text="Deixe sua avalização do cliente"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <RatingBar
+                    android:id="@+id/rbNumrStar"
+                    android:max="5"
+                    android:min="1"
+                    android:stepSize="1.0"
+                    android:numStars="5"
+                    android:rating="3.0"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etComentario"
+                    android:inputType="textMultiLine"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_field"
+                    android:hint="Deixe um breve comentário"
+                    android:paddingLeft="13dp" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:layout_weight="1"
+                        android:id="@+id/btnAvaliar"
+                        android:onClick="avaliarCliente"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginHorizontal="4dp"
+                        android:layout_marginVertical="10dp"
+                        android:background="@drawable/buttonstyleithgradient"
+                        android:text="Finalizar Serviço"
+                        android:textColor="#fff" />
+
+                    <Button
+                        android:layout_weight="1"
+                        android:id="@+id/btnRecusar"
+                        android:onClick="recusarServico"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginHorizontal="4dp"
+                        android:layout_marginVertical="10dp"
+                        android:background="@drawable/btn_gray_gradient"
+                        android:text="Recusar"
+                        android:textColor="#000" />
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_servico_avaliar_prof"
+            android:visibility="gone"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="5dp"
+            app:cardCornerRadius="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:text="Deixe sua avalização do profissional"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <RatingBar
+                    android:id="@+id/rbNumrStarProf"
+                    android:max="5"
+                    android:min="1"
+                    android:stepSize="1.0"
+                    android:numStars="5"
+                    android:rating="3.0"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etComentarioProf"
+                    android:inputType="textMultiLine"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_field"
+                    android:hint="Deixe um breve comentário"
+                    android:paddingLeft="13dp" />
+
+                <Button
+                    android:id="@+id/btnAvaliarProf"
+                    android:onClick="avaliarProfissional"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginVertical="10dp"
+                    android:background="@drawable/buttonstyleithgradient"
+                    android:text="Avaliar Profissional"
+                    android:textColor="#fff" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

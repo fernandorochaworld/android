@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.com.inteligenti.lavoutanovov2.CadastrarseActivity"
+    android:background="@color/graylight">
+
+    <android.support.v7.widget.CardView
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:textSize="25dp"
+                android:layout_marginBottom="5dp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:text="Cadastrar-se"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivProfileImage"
+                android:visibility="gone"
+                android:src="@drawable/default_avatar"
+                android:layout_gravity="center"
+                android:layout_width="130dp"
+                android:layout_height="130dp" />
+
+            <Button
+                android:id="@+id/btnProfileImage"
+                android:visibility="gone"
+                android:text="Foto do Perfil"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/etNome"
+                android:inputType="text"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:hint="Nome Completo *"
+                android:paddingLeft="13dp" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:inputType="textEmailAddress"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:hint="Email *"
+                android:paddingLeft="13dp" />
+
+            <com.vicmikhailau.maskededittext.MaskedEditText
+                android:id="@+id/etTelefone"
+                android:inputType="number"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:hint="Telefone *"
+                app:mask="(##)#####-####"
+                android:paddingLeft="13dp" />
+
+            <com.vicmikhailau.maskededittext.MaskedEditText
+                android:id="@+id/etCpf"
+                android:inputType="number"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:hint="CPF *"
+                app:mask="###.###.###-##"
+                android:paddingLeft="13dp" />
+
+            <EditText
+                android:id="@+id/etSenha"
+                android:inputType="textPassword"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:hint="Senha *"
+                android:paddingLeft="13dp" />
+
+            <EditText
+                android:id="@+id/etSenha2"
+                android:inputType="textPassword"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:hint="Confirmar Senha *"
+                android:paddingLeft="13dp" />
+
+            <Button
+                android:id="@+id/btnCadastrar"
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginVertical="10dp"
+                android:textColor="#fff"
+                android:background="@drawable/buttonstyleithgradient"
+                android:text="Cadastrar"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</ScrollView>

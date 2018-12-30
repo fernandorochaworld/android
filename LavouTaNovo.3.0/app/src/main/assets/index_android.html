@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js"></script>
+</head>
+<body>
+<script>
+    var numr_session_id = '87bb20eda31347f590b5fa5c29a5b4d6';
+    var numr_cartao = '4111' + '1111' + '1111' + '1111';
+    var numr_cvv = '123';
+    var numr_exp_mes = '12';
+    var numr_exp_ano = '2030';
+    var valr_valor = '1.00';
+    var valr_shipping_coast = '1.00';
+    //Android.setCodgStatus("status 1");
+
+    var desc_token = '';
+    var desc_sender_hash = '';
+    var desc_brand = '';
+
+    function getInstallments() {
+        PagSeguroDirectPayment.getBrand({
+            cardBin: numr_cartao,
+            success: function (json) {
+                //Android.setCodgStatus("status 2");
+                desc_brand = json.brand.name;
+                get_token();
+            }, error: function (json) {
+                //Android.setCodgStatus("status 3");
+
+                var errors = [], i = 0;
+                for(var field in json) { errors[i++] = field; }
+
+                if(errors.length > 0) {
+                    //Android.setCodgStatus( errors );
+                }
+
+            }, complete: function (json) {
+                //Android.setCodgStatus("status 4");
+            }
+        });
+        //Android.setCodgStatus("status 4.1");
+    }
+
+    function get_token() {
+        var param = {
+            cardNumber: numr_cartao,
+            brand: desc_brand,
+            cvv: numr_cvv,
+            expirationMonth: numr_exp_mes,
+            expirationYear: numr_exp_ano,
+            success: function (json) {
+                //Android.setCodgStatus("status 5");
+                desc_token = json.card.token;
+                desc_sender_hash = PagSeguroDirectPayment.getSenderHash();
+            }, error: function (json) {
+                //Android.setCodgStatus("status 6");
+
+                var errors = [], i = 0;
+                for(var field in json) { errors[i++] = field; }
+
+                if(errors.length > 0) {
+                    //Android.setCodgStatus( errors );
+                }
+
+
+            }, complete: function (json) {
+                //Android.setCodgStatus("status 7");
+            }
+        };
+
+        PagSeguroDirectPayment.createCardToken(param);
+        //Android.setCodgStatus("status 8");
+    }
+
+    jQuery(function ($) {
+        PagSeguroDirectPayment.setSessionId(numr_session_id);
+        //Android.setCodgStatus("status 9");
+
+        getInstallments();
+
+        //Android.setCodgStatus("status 13");
+    });
+
+</script>
+</body>
+</html>

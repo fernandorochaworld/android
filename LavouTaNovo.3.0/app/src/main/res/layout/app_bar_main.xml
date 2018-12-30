@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.inteligenti.lavoutanovov2.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end">
+
+
+
+        <LinearLayout
+            android:id="@+id/group_servico"
+            android:visibility="invisible"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:weightSum="1"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/desc_description"
+                android:visibility="invisible"
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:background="#AA000000"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/font_size_desc" />
+
+            <LinearLayout
+                android:layout_weight="0.5"
+                android:gravity="right"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Master -->
+                <LinearLayout
+                    android:layout_gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Master"
+                        android:textColor="#FFFFFF"
+                        android:background="#AA000000"
+                        android:padding="8dp"
+                        android:drawableLeft="@drawable/ic_info_outline_black_18dp"
+                        android:drawablePadding="5dp"
+                        android:id="@+id/icon_master"
+                        android:onClick="change_description"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fab1"
+                        android:onClick="onClickFabs"
+                        android:background="@color/green_400"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/fab_margin"
+                        android:layout_marginVertical="5dp"
+                        app:srcCompat="@drawable/ic_local_car_wash_white_24dp" />
+                </LinearLayout>
+
+                <!-- External -->
+                <LinearLayout
+                    android:layout_gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="External"
+                        android:textColor="#FFFFFF"
+                        android:background="#AA000000"
+                        android:padding="8dp"
+                        android:drawableLeft="@drawable/ic_info_outline_black_18dp"
+                        android:drawablePadding="5dp"
+                        android:id="@+id/icon_external"
+                        android:onClick="change_description"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fab2"
+                        android:onClick="onClickFabs"
+                        android:background="@color/green_500"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/fab_margin"
+                        android:layout_marginVertical="5dp"
+                        app:srcCompat="@drawable/ic_local_car_wash_white_24dp" />
+                </LinearLayout>
+
+                <!-- Ouro -->
+                <LinearLayout
+                    android:layout_gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Ouro"
+                        android:textColor="#FFFFFF"
+                        android:background="#AA000000"
+                        android:padding="8dp"
+                        android:drawableLeft="@drawable/ic_info_outline_black_18dp"
+                        android:drawablePadding="5dp"
+                        android:id="@+id/icon_ouro"
+                        android:onClick="change_description"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fab3"
+                        android:onClick="onClickFabs"
+                        android:background="@color/green_600"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/fab_margin"
+                        android:layout_marginVertical="5dp"
+                        app:srcCompat="@drawable/ic_local_car_wash_white_24dp" />
+                </LinearLayout>
+
+                <!-- Diamante -->
+                <LinearLayout
+                    android:layout_gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="Diamante"
+                        android:textColor="#FFFFFF"
+                        android:background="#AA000000"
+                        android:padding="8dp"
+                        android:drawableLeft="@drawable/ic_info_outline_black_18dp"
+                        android:drawablePadding="5dp"
+                        android:id="@+id/icon_diamante"
+                        android:onClick="change_description"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fab4"
+                        android:onClick="onClickFabs"
+                        android:background="@color/green_700"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/fab_margin"
+                        android:layout_marginVertical="5dp"
+                        app:srcCompat="@drawable/ic_local_car_wash_white_24dp" />
+                </LinearLayout>
+
+                <!-- Imperial -->
+                <LinearLayout
+                    android:layout_gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Imperial"
+                        android:textColor="#FFFFFF"
+                        android:background="#AA000000"
+                        android:padding="8dp"
+                        android:drawableLeft="@drawable/ic_info_outline_black_18dp"
+                        android:drawablePadding="5dp"
+                        android:id="@+id/icon_imperial"
+                        android:onClick="change_description"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fab5"
+                        android:onClick="onClickFabs"
+                        android:background="@color/green_800"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/fab_margin"
+                        android:layout_marginVertical="@dimen/fac_vertical_margin"
+                        app:srcCompat="@drawable/ic_local_car_wash_white_24dp" />
+                </LinearLayout>
+
+                <!-- Titan -->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Titan"
+                        android:textColor="#FFFFFF"
+                        android:background="#AA000000"
+                        android:layout_marginHorizontal="5dp"
+                        android:padding="8dp"
+                        android:drawableLeft="@drawable/ic_info_outline_black_18dp"
+                        android:drawablePadding="5dp"
+                        android:id="@+id/icon_titan"
+                        android:onClick="change_description"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fab6"
+                        android:onClick="onClickFabs"
+                        android:background="@color/green_900"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/fab_margin"
+                        android:layout_marginVertical="@dimen/fac_vertical_margin"
+                        app:srcCompat="@drawable/ic_local_car_wash_white_24dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/menu_lembrete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="* Clique no nome do serviço para mais informações  "
+            android:textAlignment="viewEnd"
+            android:textColor="#FFF"
+            android:background="#AA000000"
+            />
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            app:srcCompat="@drawable/ic_local_car_wash_white_24dp" />
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

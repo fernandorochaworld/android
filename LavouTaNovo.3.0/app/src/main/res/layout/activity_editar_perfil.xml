@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.com.inteligenti.lavoutanovov2.EditarPerfilActivity"
+    android:background="@color/graylight">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.CardView
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="5dp"
+            app:cardCornerRadius="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Meu Perfil"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivProfileImage"
+                    android:src="@drawable/default_avatar"
+                    android:layout_gravity="center"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp" />
+
+                <Button
+                    android:id="@+id/btnProfileImage"
+                    android:text="Foto do Perfil"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Sobre Mim"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etNome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_field"
+                    android:defaultFocusHighlightEnabled="false"
+                    android:enabled="false"
+                    android:hint="Nome Completo *"
+                    android:inputType="textCapSentences"
+                    android:paddingLeft="13dp"
+                    tools:enabled="false" />
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_field"
+                    android:hint="Email *"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="13dp" />
+
+                <com.vicmikhailau.maskededittext.MaskedEditText
+                    android:id="@+id/etTelefone"
+                    android:inputType="number"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_field"
+                    android:hint="Telefone *"
+                    app:mask="(##)#####-####"
+                    android:paddingLeft="13dp" />
+
+                <com.vicmikhailau.maskededittext.MaskedEditText
+                    android:id="@+id/etCpf"
+                    android:inputType="number"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_field"
+                    android:hint="CPF *"
+                    app:mask="###.###.###-##"
+                    android:paddingLeft="13dp" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="5dp"
+            app:cardCornerRadius="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Meu Endereço"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Spinner
+                        android:id="@+id/spEstado"
+                        android:inputType="text"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1.4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_field"
+                        android:entries="@array/lista_estado"
+                        android:prompt="@string/titulo_estado"
+                        android:hint="Estado *"
+                        android:paddingLeft="13dp" />
+
+                    <EditText
+                        android:id="@+id/etCidade"
+                        android:layout_weight="0.6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/bg_field"
+                        android:hint="Cidade *"
+                        android:inputType="textCapSentences"
+                        android:paddingLeft="13dp" />
+                </LinearLayout>
+
+
+                <EditText
+                    android:id="@+id/etBairro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_field"
+                    android:hint="Bairro *"
+                    android:inputType="textCapSentences"
+                    android:paddingLeft="13dp" />
+
+
+                <EditText
+                    android:id="@+id/etRua"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_field"
+                    android:hint="Rua/Avenida *"
+                    android:inputType="textCapSentences"
+                    android:paddingLeft="13dp" />
+
+                <com.vicmikhailau.maskededittext.MaskedEditText
+                    android:id="@+id/etCep"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_field"
+                    android:hint="CEP *"
+                    app:mask="##.###-###"
+                    android:inputType="number"
+                    android:paddingLeft="13dp" />
+
+                <EditText
+                    android:id="@+id/etNumero"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_field"
+                    android:hint="Número *"
+                    android:inputType="text"
+                    android:paddingLeft="13dp" />
+
+                <EditText
+                    android:id="@+id/etEdificio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_field"
+                    android:hint="Edifício"
+                    android:inputType="textCapSentences"
+                    android:paddingLeft="13dp" />
+
+                <EditText
+                    android:id="@+id/etAp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_field"
+                    android:hint="Apartamento"
+                    android:inputType="text"
+                    android:paddingLeft="13dp" />
+
+                <EditText
+                    android:id="@+id/etComplemento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_field"
+                    android:hint="Complemento"
+                    android:inputType="textCapSentences"
+                    android:paddingLeft="13dp" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="5dp"
+            app:cardCornerRadius="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Trocar Senha"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                        android:id="@+id/etSenha"
+                        android:inputType="textPassword"
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_field"
+                        android:hint="Senha"
+                        android:paddingLeft="13dp" />
+
+                    <EditText
+                        android:id="@+id/etSenha2"
+                        android:inputType="textPassword"
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_field"
+                        android:hint="Confirmar Senha"
+                        android:paddingLeft="13dp" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="5dp"
+            app:cardCornerRadius="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnCadastrar"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginVertical="10dp"
+                    android:textColor="#fff"
+                    android:background="@drawable/buttonstyleithgradient"
+                    android:text="Salvar"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>

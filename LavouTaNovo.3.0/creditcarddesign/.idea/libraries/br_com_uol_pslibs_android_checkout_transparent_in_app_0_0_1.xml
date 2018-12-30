@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="br.com.uol.pslibs:android-checkout-transparent-in-app-0.0.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android-checkout-transparent-in-app-0.0.1.aar/65d355fab78e084ce958a2116e7c0e40/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android-checkout-transparent-in-app-0.0.1.aar/65d355fab78e084ce958a2116e7c0e40/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
